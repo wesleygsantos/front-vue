@@ -2,7 +2,9 @@
   <nav>
     <router-link to="/">Home</router-link> | 
     <router-link to="/cadastro-usuario">Cadastrar Usuário</router-link> 
-      <span v-if="(typeof token) == 'string'" > | </span>
+      <span v-if="getToken()" > | </span>
+    <router-link to="/cadastro-produtos" v-if="getToken()">Cadastrar Produtos</router-link> 
+      <span v-if="getToken()" > | </span>
     <router-link to="/logout" v-if="getToken()">
       <a :href="href" @click="logOut()">Sair</a>
     </router-link>

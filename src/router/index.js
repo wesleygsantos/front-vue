@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import Guard from '../services/middleware'
 import CadUserView from '@/views/CadUserView.vue'
+import CadProdView from '@/views/CadProdView.vue'
 
 const routes = [
 
@@ -23,6 +24,13 @@ const routes = [
     path: '/cadastro-usuario',
     name: 'CadUser',
     component: CadUserView
+  },
+
+  {
+    path: '/cadastro-produtos',
+    name: 'CadProd',
+    component: CadProdView,
+    beforeEnter: Guard.auth
   },
 
   {
